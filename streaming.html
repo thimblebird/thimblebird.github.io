@@ -80,9 +80,7 @@
       }
 
       ready(() => {
-        const text = new URL(window.location.href).searchParams.get("text");
-        console.log(text);
-        document.querySelector("h1").innerHTML = text || "be right<br>back";
+        document.querySelector("h1").innerHTML = new URL(window.location.href).searchParams.get("text") || "be right<br>back";
       });
     </script>
   </head>
