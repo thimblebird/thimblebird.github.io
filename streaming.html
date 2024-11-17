@@ -69,7 +69,19 @@
         }
       }
     </style>
-    <script>document.querySelector("h1").innerHTML = new URLSearchParams(window.location.href).get('text') || 'be right<br>back';</script>
+    <script>
+      function ready(fn) {
+        if (document.readyState !== 'loading') {
+          fn();
+        } else {
+          document.addEventListener('DOMContentLoaded', fn);
+        }
+      }
+
+      ready(() => {
+        document.querySelector("h1").innerHTML = new URLSearchParams(window.location.href).get('text') || 'be right<br>back';
+      });
+    </script>
   </head>
   <body>
     <h1>be right back</h1>
