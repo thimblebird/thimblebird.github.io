@@ -1,39 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <style>
       body {
         display: grid;
-        background: no-repeat scroll 0 0/cover url('https://images.unsplash.com/photo-1485488448524-23e9ea0a94cd');
+        background: no-repeat scroll 0 0 / cover
+          url("https://images.unsplash.com/photo-1485488448524-23e9ea0a94cd");
         position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
       }
-      
+
       @keyframes floatytext {
         from {
           transform: translate(-1rem, 1.5rem) rotate(-3deg);
         }
-        
+
         25% {
           transform: translate(4rem, 2rem) rotate(7deg);
         }
-        
+
         50% {
           transform: translate(5rem, -3rem) rotate(-9deg);
         }
-        
+
         75% {
           transform: translate(2rem, -4rem) rotate(7deg);
         }
-      
+
         to {
           transform: translate(-1rem, 1.5rem) rotate(-3deg);
         }
       }
-      
+
       h1 {
         font-family: monospace;
         font-size: 7rem;
@@ -47,7 +48,7 @@
         align-self: center;
         left: 10vw;
       }
-      
+
       .pattern {
         background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="1"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
         width: 100%;
@@ -58,12 +59,12 @@
         left: 0;
         opacity: 0.25;
       }
-      
+
       @keyframes waves {
         from {
           background-position: 0 0;
         }
-      
+
         to {
           background-position: 52px 52px;
         }
@@ -71,21 +72,22 @@
     </style>
     <script>
       function ready(fn) {
-        if (document.readyState !== 'loading') {
+        if (document.readyState !== "loading") {
           fn();
         } else {
-          document.addEventListener('DOMContentLoaded', fn);
+          document.addEventListener("DOMContentLoaded", fn);
         }
       }
 
       ready(() => {
-        const text = new URLSearchParams(window.location.href).get('text');
-        document.querySelector("h1").innerHTML = text || 'be right<br>back';
+        const text = new URL(window.location.href).searchParams.get("text");
+        console.log(text);
+        document.querySelector("h1").innerHTML = text || "be right<br>back";
       });
     </script>
   </head>
   <body>
-    <h1>be right back</h1>
+    <h1>...</h1>
     <div class="pattern"></div>
   </body>
 </html>
