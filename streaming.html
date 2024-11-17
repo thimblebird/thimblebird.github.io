@@ -69,10 +69,10 @@
         }
       }
     </style>
+    <script>document.querySelector("h1").innerHTML = new URLSearchParams(window.location.href).get('text') || 'be right<br>back';</script>
   </head>
   <body>
     <h1>be right back</h1>
     <div class="pattern"></div>
-    <script>document.querySelector("h1").innerHTML = new URLSearchParams(window.location.href).get('text') || 'be right<br>back';</script>
   </body>
 </html>
